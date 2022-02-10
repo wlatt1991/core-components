@@ -150,6 +150,9 @@ export const CalendarRangeStatic: FC<CalendarRangeStaticProps> = ({
         }
 
         period.setStart(dateFrom || undefined);
+        if (dateTo) {
+            period.setEnd(dateTo);
+        }
 
         onDateFromChange({
             value: inputFromValue,
@@ -164,6 +167,9 @@ export const CalendarRangeStatic: FC<CalendarRangeStaticProps> = ({
         }
 
         period.setEnd(dateTo || undefined);
+        if (dateFrom) {
+            period.setStart(dateFrom);
+        }
 
         onDateToChange({
             value: inputToValue,
